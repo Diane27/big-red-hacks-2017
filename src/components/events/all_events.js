@@ -13,7 +13,7 @@ class AllEvents extends Component{
             'term': '',
             'filter': ''
         }
-        
+
         this.handleSearchEvent = this.handleSearchEvent.bind(this)
     }
     handleSearchEvent(e){
@@ -52,18 +52,46 @@ class AllEvents extends Component{
     render(){
         const all_events_cards = this.state.data.map((d) => {
             return(
-                <div key={d.id}>
-                    <p><Link to={`/events/${d.id}`}>{d.name}</Link></p>
-                    <p>{d.details}</p>
+                <div className="card" key={d.id}>
+                    <h3 className="card-header">{d.name}</h3>
+                      <div className= "card-block">
+
+                      <div className="card-group">
+                      <div className="card">
+                        <div className="card-block">
+                        <h4 className="card-title">Details</h4>
+                        <p className="card-text">{d.details}</p>
+                        </div>
+                      </div>
+                      <div className="card">
+                        <div className="card-block">
+                        <h4 className="card-title">Teachable Subjects</h4>
+                        <p className="card-text">{d.topics}</p>
+                        <a href={`/events/${d.id}`} className="btn btn-primary">Learn More</a>
+
+                        </div>
+                      </div>
+                      <div className="card">
+                        <img className="card-img-top img-fluid" src={d.image} alt={d.name}/>
+                      </div>
+                      </div>
+
+
+                    </div>
                 </div>
-            ) 
+            )
         })
 
         return(
         <div>
-            <h2>this is all events</h2>
             <p>{this.state.filter}</p>
             <SeachEvent handleSearchEvent={this.handleSearchEvent} term={this.state.term}/>
+            <div className="jumbotron jumbotron-fluid">
+              <div className="container">
+                <h1 className="display-3">All Events</h1>
+                <p className="lead">Experience your city! Here are all the educational opportunities available for you to peruse.</p>
+              </div>
+            </div>
             <div>
                 {all_events_cards}
             </div>
@@ -72,4 +100,4 @@ class AllEvents extends Component{
     }
 }
 
-export default AllEvents 
+export default AllEvents
