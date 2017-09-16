@@ -11,11 +11,7 @@
   padding-top: 18rem;
   padding-bottom: 10rem;
   text-align: center;
-<<<<<<< HEAD:src/components/App.css
   /* background-image: url("./background.png"); */
-=======
-  background-image: url("./background.png");
->>>>>>> master:src/App.css
   color: #fff;
   filter: brightness(50%);
 }
