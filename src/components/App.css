@@ -11,7 +11,7 @@
   padding-top: 18rem;
   padding-bottom: 10rem;
   text-align: center;
-  background-image: url("%PUBLIC_URL%/home.png");
+  /* background-image: url("./background.png"); */
   color: #fff;
   filter: brightness(50%);
 }
