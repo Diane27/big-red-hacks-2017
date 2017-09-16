@@ -13,7 +13,7 @@ class ClassroomView extends Component{
     render(){
         //filter data for eventId
         const classroom = DATACLASSROOMS.filter(d => {
-            return parseInt(this.props.match.params.classId) ===  d.id;
+            return parseInt(this.props.match.params.classId, 10) ===  d.id;
         })
 
         let classroom_view = <p>error- no such id found</p>;

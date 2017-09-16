@@ -42,9 +42,8 @@ class AllEvents extends Component{
                 }
 
                 }
-            }else{
-                return d.name.toLowerCase().includes(term.toLowerCase());
             }
+            return d.name.toLowerCase().includes(term.toLowerCase());
         })
         this.setState({term, data, filter})
     }
@@ -67,8 +66,9 @@ class AllEvents extends Component{
                         <div className="card-block">
                         <h4 className="card-title">Teachable Subjects</h4>
                         <p className="card-text">{d.topics}</p>
-                        <a href={`/events/${d.id}`} className="btn btn-primary">Learn More</a>
-
+                        <Link to={`/events/${d.id}`}>
+                            <button className="btn btn-primary">Learn More</button>
+                        </Link>    
                         </div>
                       </div>
                       <div className="card">
@@ -84,14 +84,14 @@ class AllEvents extends Component{
 
         return(
         <div>
-            <p>{this.state.filter}</p>
-            <SeachEvent handleSearchEvent={this.handleSearchEvent} term={this.state.term}/>
             <div className="jumbotron jumbotron-fluid">
               <div className="container">
                 <h1 className="display-3">All Events</h1>
                 <p className="lead">Experience your city! Here are all the educational opportunities available for you to peruse.</p>
               </div>
             </div>
+            <SeachEvent handleSearchEvent={this.handleSearchEvent} term={this.state.term}/>
+            <p>searching using: {this.state.filter}</p>
             <div>
                 {all_events_cards}
             </div>

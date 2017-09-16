@@ -6,7 +6,7 @@ import EventDetail from './event_detail'
 const EventDetails = (props) => {
     //filter data for eventId
     const event = DATAEVENTS.filter(d => {
-        return parseInt(props.match.params.eventId) ===  d.id;
+        return parseInt(props.match.params.eventId, 10) ===  d.id;
     })
 
     let event_view = <p>error- no such id found</p>;
