@@ -1,5 +1,5 @@
 const DATACLASSROOMS = [
-    {
+      {
         id: 1,
         name: 'Miss Smith',
         parent_student: {
@@ -8,8 +8,10 @@ const DATACLASSROOMS = [
             3: {parents: ['Teodor Cotter', 'Mary Cotter'], student: 'Madison Cotter'},
             4: {parents: ['Bryan Barret', 'Lindsay Smithe'], student: 'Karen Barret'},
             5: {parents: ['Viktor Holt', 'Mancy Watkins'], student: 'Kathy Holt'}
-        },
+        }
+      },
 
+      {
         id: 2,
         name: 'Mr Johnson',
         parent_student: {
@@ -19,8 +21,7 @@ const DATACLASSROOMS = [
             4: {parents: ['Felix Hoover', 'Mary Kartensen'], student: 'Mike Kartensen'},
             5: {parents: ['Brenna Pierce', 'Brook Pierce'], student: 'Victoria Pierce'}
         }
-
-    }
+      }
 ]
 
 export default DATACLASSROOMS;
