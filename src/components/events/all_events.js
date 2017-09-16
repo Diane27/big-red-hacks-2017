@@ -53,7 +53,7 @@ class AllEvents extends Component{
 
         return(
         <div>
-            <h2>this is all events</h2>
+            <p>this is all events</p>
             <p>{this.state.filter}</p>
             <SeachEvent handleSearchEvent={this.handleSearchEvent} term={this.state.term}/>
             <div>
