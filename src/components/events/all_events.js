@@ -28,11 +28,19 @@ class AllEvents extends Component{
         }
         let data = DATAEVENTS.filter(d =>{
             if(filter !== ''){
-                //string query
                 if(filter in d){
-                    return d[filter].toLowerCase().includes(temp_term.toLowerCase())
-
+                //string query
+                if(typeof(d[filter]) === 'string' || typeof(d[filter]) === 'number'){
+                    return d[filter].toString().toLowerCase().includes(temp_term.toLowerCase())
+                }
                 //array query
+                else if(typeof(d[filter] === 'array')){
+                    //search each item in array for temp_term
+                    return d[filter].filter(e => {
+                        return e.toString().toLowerCase().includes(temp_term.toLowerCase())
+                    }).length > 0
+                }
+
                 }
             }else{
                 return d.name.toLowerCase().includes(term.toLowerCase());
