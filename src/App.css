@@ -7,17 +7,18 @@
   height: 80px;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.header {
+  padding-top: 18rem;
+  padding-bottom: 10rem;
+  text-align: center;
+  background-image: url("./background.png");
+  color: #fff;
+  filter: brightness(50%);
 }
 
-.App-intro {
-  font-size: large;
+.form-main {
+  text-align: center;
 }
-
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
