@@ -49,36 +49,31 @@ class AllEvents extends Component{
     }
 
     render(){
-        const all_events_cards = this.state.data.map((d) => {
-            return(
-                <div className="card" key={d.id}>
-                    <h3 className="card-header">{d.name}</h3>
-                      <div className= "card-block">
+        const all_events_cards = this.state.data.map(d => {
+            const badge_list = d.subjects.map(e => {
+                return(<h4><span style={{marginRight: '5px'}} className="badge badge-default">{e}</span></h4>)
+            })
 
-                      <div className="card-group">
-                      <div className="card">
-                        <div className="card-block">
-                        <h4 className="card-title">Details</h4>
+            return(
+                <div className="card" key={d.id} 
+                    style={{"width" : "30rem", 'margin' : '10px 20px'}}>
+                    <div className="card-header">{d.name}</div>
+                    <img className="card-img-top img-fluid" style={{"width" : "30rem"}} src={d.image} alt={d.name} />
+                    <div className="card-block">
                         <p className="card-text">{d.details}</p>
-                        </div>
-                      </div>
-                      <div className="card">
-                        <div className="card-block">
-                        <h4 className="card-title">Teachable Subjects</h4>
-                        <p className="card-text">{d.topics}</p>
+                    </div>
+                    <ul className="list-group list-group-flush">
+                        <li className="list-group-item">
+                            {badge_list}
+                        </li>
+                    </ul>
+                    <div className="card-block">
                         <Link to={`/events/${d.id}`}>
                             <button className="btn btn-primary">Learn More</button>
-                        </Link>    
-                        </div>
-                      </div>
-                      <div className="card">
-                        <img className="card-img-top img-fluid" src={d.image} alt={d.name}/>
-                      </div>
-                      </div>
-
-
+                        </Link>
                     </div>
-                </div>
+              </div>
+
             )
         })
 
@@ -90,9 +85,10 @@ class AllEvents extends Component{
                 <p className="lead">Experience your city! Here are all the educational opportunities available for you to peruse.</p>
               </div>
             </div>
-            <SeachEvent handleSearchEvent={this.handleSearchEvent} term={this.state.term}/>
-            <p>searching using: {this.state.filter}</p>
-            <div>
+            <SeachEvent handleSearchEvent={this.handleSearchEvent} filter={this.state.filter}/>
+            <div style={{'display' : 'flex', 'flex-direction': 'col',
+                         'flex-wrap': 'wrap', 'align-items': 'flex-start',
+                         'justify-content': 'center'}}>
                 {all_events_cards}
             </div>
         </div>

@@ -5,7 +5,7 @@ import Events from './events'
 import Classroom from './classroom'
 
 const Content = () => (
-  <main style={{"padding-top": "100px"}}>
+  <main style={{"paddingTop": "60px", "margin": "10px 15px"}}>
     <Switch>
       <Route exact path='/' component={Main}/>
       <Route path='/events' component={Events}/>
