@@ -65,10 +65,10 @@ class AllEvents extends Component{
                       <div className="card">
                         <div className="card-block">
                         <h4 className="card-title">Teachable Subjects</h4>
-                        <p className="card-text">{d.topics}</p>
+                        <p className="card-text">{d.subjects}</p>
                         <Link to={`/events/${d.id}`}>
                             <button className="btn btn-primary">Learn More</button>
-                        </Link>    
+                        </Link>
                         </div>
                       </div>
                       <div className="card">

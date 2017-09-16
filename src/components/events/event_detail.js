@@ -6,7 +6,7 @@ const EventDetail = (props) => {
         <h3>{props.event.name}</h3>
         <p>{props.event.details}</p>
         <ui>
-            <li>{props.event.topics}</li>
+            <li>{props.event.subjects}</li>
         </ui>
         <img src={props.event.image} width={"500px"}/>
         </div>
