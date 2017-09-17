@@ -67,7 +67,7 @@ class AllEvents extends Component{
 
         return(
         <div>
-            <div className="jumbotron jumbotron-fluid">
+            <div className="jumbotron jumbotron-fluid" style={{"background-color": "orange"}}>
               <div className="container">
                 <h1 className="display-3">All Events</h1>
                 <p className="lead">Experience your city! Here are all the educational opportunities available for you to peruse.</p>

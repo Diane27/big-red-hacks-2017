@@ -31,13 +31,13 @@ class AllClassrooms extends Component{
         })
         return(
         <div>
-            <div className="jumbotron jumbotron-fluid">
+            <div className="jumbotron jumbotron-fluid" style={{"background-color": "turquoise"}}>
             <div className="container">
                 <h1 className="display-3">Classrooms</h1>
                 <p className="lead">Your educators have curated trips in your community that relate to what's being taught in your child's class.</p>
             </div>
             </div>
-            <span className="badge badge-warning"><h3>Your Teachers</h3></span>
+            <span className="badge badge-success"><h3>Your Teachers</h3></span>
 
 
             <div style={{'display' : 'flex', 'flex-direction': 'col',
@@ -53,7 +53,7 @@ class AllClassrooms extends Component{
 
             </div>
 <br />
-<span className="badge badge-warning"><h3>Additional Resources</h3></span>
+<span className="badge badge-success"><h3>Additional Resources</h3></span>
 <br />
             <div className="card-deck">
 <div className="card">
