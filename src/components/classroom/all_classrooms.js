@@ -8,19 +8,44 @@ class AllClassrooms extends Component{
         const all_events_cards = DATACLASSROOMS.map((d) => {
             return(
                 <div key={d.id}>
-                    <p><Link to={`/classroom/${d.id}`}>{d.name}</Link></p>
-                    <p>{d.details}</p>
+
+                  <div className="card text-center">
+                  <div className="card-block">
+                  <h4 className="card-title">{d.name}</h4>
+                  <h4 className="card-title">{d.details}</h4>
+                  <a href={`/classroom/${d.id}`} className="btn btn-primary">Go</a>
+                  </div>
+                  <div className="card-footer text-muted">
+                  2 days ago
+                  </div>
+                  </div>
+
+
+
                 </div>
-            ) 
+
+
+
+            )
         })
         return(
         <div>
-            <h2>this is all classrooms</h2>
-            {all_events_cards}
+            <div className="jumbotron jumbotron-fluid">
+            <div className="container">
+                <h1 className="display-3">Classrooms</h1>
+                <p className="lead">Your educators have curated trips in your community that relate to what's being taught in your child's class.</p>
+            </div>
+            </div>
+
+            <div style={{'display' : 'flex', 'flex-direction': 'col',
+                         'flex-wrap': 'wrap', 'align-items': 'flex-start',
+                         'justify-content': 'center'}}>
+                {all_events_cards}
+            </div>
         </div>
         )
     }
 }
 
 
-export default AllClassrooms 
+export default AllClassrooms

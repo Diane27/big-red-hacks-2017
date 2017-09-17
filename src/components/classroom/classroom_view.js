@@ -11,13 +11,13 @@ class ClassroomView extends Component{
 
         this.state = {}
     }
-    
+
     render(){
         //filter data for eventId
         const classId = this.props.match.params.classId.toString();
 
-        
-        
+
+
         let classEventsIds = []
         //check if localStorage classEvents exist
         if ('classEvents' in localStorage) {
@@ -62,4 +62,4 @@ class ClassroomView extends Component{
 }
 
 
-export default ClassroomView 
+export default ClassroomView

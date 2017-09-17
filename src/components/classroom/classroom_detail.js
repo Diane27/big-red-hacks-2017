@@ -10,16 +10,19 @@ const ClassroomDetail = (props) => {
 			return props.classroom.id == e.id
 		})[0].parent_student[d.child_id].student
 		return(
-			<div>
-				<h2>{d.comments}</h2>
-				<p> Parents of {student_name}</p>
+
+			<div className="alert alert-info" role="alert">
+  		<strong><p>{d.comments}</p></strong>
+  		<p className="mb-0">Parents of {student_name}</p>
 			</div>
+
 			)
 	})
     return(
         <div key={props.classroom.id}>
-            <h2>{props.classroom.name} - {props.classroom.id}</h2>
+            <h2>{props.classroom.name} - Class {props.classroom.id}</h2>
             <hr />
+						<h3>Comments</h3>
             {comments}
         </div>
     )
