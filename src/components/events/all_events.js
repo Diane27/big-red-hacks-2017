@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
-import { Link } from 'react-router-dom'
 import SeachEvent from './search_event'
+import EventCard from './event_card'
 
 import DATAEVENTS from '../../data/data_events'
 
@@ -16,26 +16,29 @@ class AllEvents extends Component{
 
         this.handleSearchEvent = this.handleSearchEvent.bind(this)
     }
+    
     handleSearchEvent(e){
         e.preventDefault();
         let term =  e.target.value;
         let filter = '';
         let temp_term;
-        //filter databased on input
+        //filter data based on other keys/values if it includes ::
         if(term.includes('::')){
             filter = term.split('::')[0]
-            temp_term = term.split('::')[1]
+            temp_term = term.split('::')[1] // the part after the ::
         }
         let data = DATAEVENTS.filter(d =>{
+            //if there is a filter
             if(filter !== ''){
                 if(filter in d){
                 //string query
                 if(typeof(d[filter]) === 'string' || typeof(d[filter]) === 'number'){
+                    //check if term is in the value of the query key
                     return d[filter].toString().toLowerCase().includes(temp_term.toLowerCase())
                 }
                 //array query
                 else if(typeof(d[filter] === 'array')){
-                    //search each item in array for temp_term
+                    //search each item in query array for term
                     return d[filter].filter(e => {
                         return e.toString().toLowerCase().includes(temp_term.toLowerCase())
                     }).length > 0
@@ -43,6 +46,7 @@ class AllEvents extends Component{
 
                 }
             }
+            //default case , when there is no filter , query by name
             return d.name.toLowerCase().includes(term.toLowerCase());
         })
         this.setState({term, data, filter})
@@ -50,30 +54,14 @@ class AllEvents extends Component{
 
     render(){
         const all_events_cards = this.state.data.map(d => {
+
+            //generate badges
             const badge_list = d.subjects.map(e => {
                 return(<h4><span style={{marginRight: '5px'}} className="badge badge-default">{e}</span></h4>)
             })
 
             return(
-                <div className="card" key={d.id} 
-                    style={{"width" : "30rem", 'margin' : '10px 20px'}}>
-                    <div className="card-header">{d.name}</div>
-                    <img className="card-img-top img-fluid" style={{"width" : "30rem"}} src={d.image} alt={d.name} />
-                    <div className="card-block">
-                        <p className="card-text">{d.details}</p>
-                    </div>
-                    <ul className="list-group list-group-flush">
-                        <li className="list-group-item">
-                            {badge_list}
-                        </li>
-                    </ul>
-                    <div className="card-block">
-                        <Link to={`/events/${d.id}`}>
-                            <button className="btn btn-primary">Learn More</button>
-                        </Link>
-                    </div>
-              </div>
-
+                <EventCard d={d} badge_list={badge_list}/>
             )
         })
 

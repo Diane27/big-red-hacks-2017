@@ -3,7 +3,7 @@ import React from 'react'
 const ClassroomDetail = (props) => {
     return(
         <div key={props.classroom.id}>
-            <p>{props.classroom.name}</p>
+            <h2>{props.classroom.name} - {props.classroom.id}</h2>
         </div>
     )
 }
