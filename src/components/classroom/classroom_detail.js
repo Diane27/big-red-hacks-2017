@@ -7,7 +7,7 @@ const ClassroomDetail = (props) => {
 		return data.classroom_id == props.classroom.id
 	}).map(d => {
 		const student_name = DATACLASSROOMS.filter(e => {
-			return props.classroom.id == e.id
+			return e.id == props.classroom.id
 		})[0].parent_student[d.child_id].student
 		return(
 
