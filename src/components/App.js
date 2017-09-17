@@ -7,6 +7,7 @@ import '../../node_modules/bootstrap/dist/js/bootstrap.js'
 import Navbar from './navbar'
 import Content from './content'
 
+
 class App extends Component {
   render() {
     return (

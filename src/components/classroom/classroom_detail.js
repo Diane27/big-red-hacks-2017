@@ -22,7 +22,7 @@ const ClassroomDetail = (props) => {
         <div key={props.classroom.id}>
             <h2>{props.classroom.name} - Class {props.classroom.id}</h2>
             <hr />
-						<h3>Comments</h3>
+			<h3>Comments</h3>
             {comments}
         </div>
     )

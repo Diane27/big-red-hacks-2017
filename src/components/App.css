@@ -1,5 +1,8 @@
+
+
 .App {
   text-align: center;
+
 }
 
 .App-logo {
@@ -7,13 +10,15 @@
   height: 80px;
 }
 
-.header {
-  padding-top: 18rem;
-  padding-bottom: 10rem;
-  text-align: center;
-  /* background-image: url("./background.png"); */
+
+.body {
+  background:#fff url("../background.jpg") no-repeat center center fixed;
   color: #fff;
-  filter: brightness(50%);
+  height: 650px;
+  width: 100%;
+  text-align: center;
+  background-size: cover; 
+  padding-top: 15%;
 }
 
 .form-main {
